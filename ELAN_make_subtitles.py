@@ -87,6 +87,7 @@ def make_video(videofile,clip,num,speed):
 	video = CompositeVideoClip([v]+subs).speedx(speed/100)
 	clipfile = videofile.split(".")[0]+"_subtitles_"+str(num+1)+".mp4"
 	video.write_videofile(clipfile,temp_audiofile="temp-audio.m4a", remove_temp=True, codec="libx264", audio_codec="aac")
+	v.close()
 
 def make_all_clips(tiername,speed):
 	"""
